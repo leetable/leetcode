@@ -3,7 +3,8 @@
 using namespace std;
 
 string addStrings(string num1, string num2)
-{
+{	
+	//-1为了num1[a1]取到最后一位
 	int a1 = num1.size() - 1;
     cout<<"length of a1:"<<a1<<endl;
 	int a2 = num2.size() - 1;
@@ -21,11 +22,13 @@ string addStrings(string num1, string num2)
            // cout<<"num1:"<<num1[a1]<<endl;
 			sum += num1[a1] - '0';   // 将字符数字转化为 数字 再相加   ‘5’----->5
 		}
+		//cout<<"sum"<<sum<<endl;
 
 		if (a2 >= 0)
 		{
 			sum += num2[a2] - '0';
 		}
+		cout<<"sum: "<<sum<<endl;
 
 		if (sum >= 10)     //对应位相加 再加上进位 如果大于>=10说明要进位  更新step为1
 		{
@@ -44,8 +47,10 @@ string addStrings(string num1, string num2)
 	}
 	if (step == 1)                 //最后再考虑一下最高位相加后有没有进位；   
 	{
-		ret.insert(0, 1, '1');
+		ret.insert(0, 1, '1');//第0位拼接上1个‘1’
+		cout<<"add step ret is :"<<ret<<endl;
 	}
+	
 	return ret;
 }
 
