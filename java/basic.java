@@ -7,7 +7,6 @@ public class basic {
         int z=10;
         while(z<20){
             System.out.println(z);
-
             z++;
         }
 
